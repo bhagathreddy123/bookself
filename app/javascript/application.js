@@ -33,6 +33,18 @@ $(document).ready(function() {
 		data: { book_ids: bookIds },
 	});
 });
+	$("#books-index-master").on('click', function() {
+		$('.book-select-check').prop('checked', $(this).prop('checked'))
+
+	if($(this).prop('checked')) {
+      counter += $('.book-select-check').length;
+      $("#delete-books").text(`Delete ${pluralize(counter, 'Book')}`);
+      $("#delete-books").show()
+    } else {
+      $("#delete-books").hide()
+    }
+
+	});
 });
 
 
