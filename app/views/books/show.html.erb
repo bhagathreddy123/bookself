@@ -1,0 +1,23 @@
+<div class="row pt-4">
+  <div class="col-6">
+    <div>
+      <h3 id="book-title">
+        <span id="book-name"><%= @book.name %></span>
+        <a href="javascript:void(0)" id="book-name-editable">
+          <i class="bi bi-pencil"></i>
+        </a>  
+      </h3>
+      <div id="book-editable-area" style="display: none;" class="mb-2">
+        <input type="text" class="form-control mb-2" value="<%= @book.name %>" id="editable-name">
+        <button type="button" class="btn btn-primary" id="update-book-name" data-book-id="<%= @book.id %>">Update</button>
+        <button type="button" class="btn btn-danger" id="cancel-update">Cancel</button>
+      </div>
+    </div>
+    <div>
+      <h5>by <a href="javascript:void(0)"><span class="text-primary"><%= @book.author %></span></a></h5>
+    </div>
+    <div>
+      <h5 class="text-primary"><%= @book.price %></h5>
+    </div>
+  </div>
+</div>
