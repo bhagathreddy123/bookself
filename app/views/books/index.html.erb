@@ -28,6 +28,7 @@
           <td><%= book.author %></td>
           <td><%= book.category %></td>
           <td>
+            <%= link_to "Buy This Book", "#{book.buy_link}/#{book.id}", class: "book-buy-link btn btn-success", target: '_blank' %>
             <button type="button" class="btn btn-primary copy-link" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Copy link to clipboard">Copy Buy Link</button>
           </td>
         </tr>
