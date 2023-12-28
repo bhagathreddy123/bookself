@@ -26,13 +26,16 @@ $(document).ready(function() {
        	 	bookIds.push($(this).data('book-id'))
        	 }
        });
-      
-	$.ajax({
-		url: 'books/bulk_delete_books',
-		type: 'DELETE',
-		data: { book_ids: bookIds },
-	});
-});
+      if(confirm('Are you sure you want to delete selected books? This action can not be undone. If you want to delete selected books click on the OK else click on Cancel.')){
+       		$.ajax({
+						url: 'books/bulk_delete_books',
+						type: 'DELETE',
+						data: { book_ids: bookIds },
+					});
+       } else {
+       	 return false;
+       }
+      });
 	$("#books-index-master").on('click', function() {
 		$('.book-select-check').prop('checked', $(this).prop('checked'))
 
