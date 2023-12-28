@@ -7,6 +7,8 @@ class BooksController < ApplicationController
   end
 
   def bulk_delete_books
+    #debugger
+    sleep 0.5
     respond_to do |format| 
       @books = Book.where(id: params[:book_ids])
       @books.delete_all
