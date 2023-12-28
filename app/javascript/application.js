@@ -31,6 +31,18 @@ $(document).ready(function() {
 						url: 'books/bulk_delete_books',
 						type: 'DELETE',
 						data: { book_ids: bookIds },
+						success: () => {
+							$("#flash-notification").html(
+ 					 				`
+ 					 				 <div class="alert alert-success" role="success">
+ 					 				  Your request has been submitted successfully. selected books has been deleted from the database.
+ 					 				 </div>
+ 					 				`
+								)
+							setInterval(function(){
+								$('.alert').fadeOut();
+							}, 2000)
+						}
 					});
        } else {
        	 return false;
